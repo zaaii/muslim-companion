@@ -14,7 +14,7 @@ export default function VerseList({ verses }: Props) {
         <Stack key={verse.number.inSurah}>
           <VerseHeader
             number={verse.number.inQuran}
-            audioSrc={verse.audio.primary}
+            audioSrc={new Audio(verse.audio.primary)}
           />
           <VerseContent
             arabText={verse.text.arab}
