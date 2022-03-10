@@ -13,7 +13,7 @@ export default function VerseList({ verses }: Props) {
       {verses.map((verse) => (
         <Stack key={verse.number.inSurah}>
           <VerseHeader
-            number={verse.number.inSurah}
+            number={verse.number.inQuran}
             audioSrc={verse.audio.primary}
           />
           <VerseContent

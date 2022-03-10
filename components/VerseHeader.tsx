@@ -1,7 +1,5 @@
-import { Flex, HStack, IconButton, Text } from '@chakra-ui/react';
-import { IoShareSocial } from 'react-icons/io5';
+import { Flex, HStack, Text } from '@chakra-ui/react';
 import AudioControl from './AudioControl';
-import VerseBookmarkButton from './VerseBookmarkButton';
 
 interface Props {
   number: number;
@@ -23,14 +21,7 @@ export default function VerseHeader({ number, audioSrc }: Props) {
         <Text color="white">{number}</Text>
       </Flex>
       <HStack>
-        <IconButton
-          icon={<IoShareSocial />}
-          aria-label="share"
-          variant="ghost"
-          color="green.700"
-        />
         <AudioControl audioSrc={audioSrc} />
-        <VerseBookmarkButton />
       </HStack>
     </HStack>
   );

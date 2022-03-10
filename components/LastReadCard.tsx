@@ -13,7 +13,6 @@ export default function LastReadCard() {
     const {
       number,
       name: {
-        translation: { id: translationID },
         transliteration: { id: transliterationID },
         short,
       },
@@ -27,22 +26,18 @@ export default function LastReadCard() {
       <Stack
         p={4}
         rounded="md"
-        bgColor="green.300"
+        bgColor="green.100"
         cursor="pointer"
         onClick={handleCardClick}
         shadow="md"
+        align="center"
       >
         <HStack align="center">
           <Icon as={IoBook} />
           <Text color="green.800">Terakhir Dibaca</Text>
         </HStack>
-        <HStack justify="space-between">
-          <Stack>
-            <Text color="green.800">{transliterationID}</Text>
-            <Text color="green.800">{translationID}</Text>
-          </Stack>
-          <Heading color="green.800">{short}</Heading>
-        </HStack>
+        <Heading color="green.800" fontSize="4xl">{short}</Heading>
+        <Text color="green.800">{transliterationID}</Text>
       </Stack>
     );
   }
