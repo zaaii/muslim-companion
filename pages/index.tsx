@@ -1,4 +1,4 @@
-import { Heading, HStack, IconButton, Stack, Text } from '@chakra-ui/react';
+import { Heading, HStack, IconButton, Stack } from '@chakra-ui/react';
 import Head from 'next/head';
 import { IoSearch } from 'react-icons/io5';
 
@@ -16,7 +16,6 @@ export default function Home() {
       <Stack p={4}>
         <HStack justify="space-between">
           <Heading fontSize="lg">Muslim Companion</Heading>
-          <IconButton as={IoSearch} aria-label="search" variant="ghost" size="xs" />
         </HStack>
         <Stack py={2}>
           <LastReadCard />
