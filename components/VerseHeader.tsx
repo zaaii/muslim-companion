@@ -3,7 +3,7 @@ import AudioControl from './AudioControl';
 
 interface Props {
   number: number;
-  audioSrc: string;
+  audioSrc: HTMLAudioElement;
 }
 
 export default function VerseHeader({ number, audioSrc }: Props) {
