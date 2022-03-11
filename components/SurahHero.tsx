@@ -15,10 +15,16 @@ export default function SurahHero({
   numberOfVerses,
 }: Props) {
   return (
-    <Stack rounded="md" bgColor="green.100" align="center" py={4} shadow="md">
-      <Heading color="green.800">{surahNameInArab}</Heading>
-      <Heading color="green.800">{transliterationInID}</Heading>
-      <Divider colorScheme="green"/>
+    <Stack
+      rounded="md"
+      align="center"
+      py={4}
+      shadow="md"
+      bg="gray.100"
+      minH="160px"
+    >
+      <Heading>{surahNameInArab}</Heading>
+      <Heading>{transliterationInID}</Heading>
       <Text>
         {revelationInID} | {numberOfVerses} Ayat
       </Text>

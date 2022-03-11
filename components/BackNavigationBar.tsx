@@ -10,7 +10,14 @@ export default function BackNavigationBar() {
   };
 
   return (
-    <HStack align="center" justify="space-between">
+    <HStack
+      align="center"
+      justify="space-between"
+      position="sticky"
+      top="0"
+      bg="white"
+      zIndex={3}
+    >
       <HStack>
         <IconButton
           icon={<IoArrowBack />}
@@ -18,7 +25,6 @@ export default function BackNavigationBar() {
           aria-label="back"
           rounded="full"
           variant="ghost"
-          color="green.700"
         />
         <Text>Beranda</Text>
       </HStack>

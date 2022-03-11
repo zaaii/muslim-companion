@@ -1,6 +1,7 @@
-import { Heading, HStack, IconButton, Stack } from '@chakra-ui/react';
+import { Stack } from '@chakra-ui/react';
 import Head from 'next/head';
-import { IoSearch } from 'react-icons/io5';
+import Footer from '../components/Footer';
+import Header from '../components/Header';
 
 import LastReadCard from '../components/LastReadCard';
 import SurahList from '../components/SurahList';
@@ -9,19 +10,20 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Muslim Companion</title>
+        <title>Muslim Companion | Qur'an Reader</title>
         <meta name="description" content="Muslim companion app" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <Header />
       <Stack p={4}>
-        <HStack justify="space-between">
-          <Heading fontSize="lg">Muslim Companion</Heading>
-        </HStack>
-        <Stack py={2}>
+        <Stack justify="space-between">
           <LastReadCard />
+        </Stack>
+        <Stack py={2}>
           <SurahList />
         </Stack>
       </Stack>
+      <Footer />
     </>
   );
 }
