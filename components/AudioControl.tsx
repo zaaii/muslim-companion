@@ -18,7 +18,7 @@ export default function AudioControl({ audioSrc }: Props) {
         setAudioPlayed(false);
       });
     };
-  }, []);
+  }, [audioSrc]);
 
   const handlePlayClick = () => {
     audioSrc.play();

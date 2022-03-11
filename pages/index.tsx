@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Muslim Companion | Qur'an Reader</title>
+        <title>Muslim Companion | Qur&apos;an Reader</title>
         <meta name="description" content="Muslim companion app" />
         <link rel="icon" href="/favicon.ico" />
       </Head>

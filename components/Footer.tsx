@@ -11,7 +11,7 @@ export default function Footer() {
         >
           @hare451g
         </Link>
-        's GitHub
+        &apos;s GitHub
       </Text>
       <Divider />
       <Text textAlign="center">
@@ -29,7 +29,7 @@ export default function Footer() {
       <Text textAlign="center">
         Super powered with{' '}
         <Link color="green.400" href="https://github.com/sutanlab/quran-api">
-          Qur'an API
+          Qur&apos;an API
         </Link>{' '}
         by{' '}
         <Link color="green.400" href="https://github.com/sutanlab">

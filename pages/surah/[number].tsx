@@ -24,14 +24,14 @@ export default function SurahDetailsPage() {
         setSurah(response.data.data);
       });
     }
-  }, [number]);
+  }, [number, setLastReadAtom]);
 
   if (surah) {
     return (
       <>
         <Head>
           <title>
-            Muslim Companion | Qur'an Reader - {surah.name.transliteration.id}{' '}
+            Muslim Companion | Qur&apos;an Reader - {surah.name.transliteration.id}{' '}
           </title>
           <meta name="description" content="Muslim companion app" />
           <link rel="icon" href="/favicon.ico" />
@@ -54,7 +54,7 @@ export default function SurahDetailsPage() {
   return (
     <>
       <Head>
-        <title>Muslim Companion | Qur'an Reader</title>
+        <title>Muslim Companion | Qur&apos;an Reader</title>
         <meta name="description" content="Muslim companion app" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
