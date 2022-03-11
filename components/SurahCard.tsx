@@ -17,10 +17,10 @@ export default function SurahCard({
   numberOfVerses,
 }: Props) {
   const router = useRouter();
-  
+
   const handleSurahClick = () => {
     router.push(`/surah/${number}`);
-  }
+  };
 
   return (
     <HStack
@@ -31,16 +31,20 @@ export default function SurahCard({
       cursor="pointer"
       onClick={handleSurahClick}
     >
-      <Text w="10%">{number}</Text>
-      <Stack flex={1} justify="center" align="flex-start" spacing={1}>
-        <Text fontWeight={700} p={0} m={0} color="green.800">
-          {surahName}
+      <HStack flex={1}>
+        <Text mr="4" fontSize="lg" fontWeight="bold">
+          {number}
         </Text>
-        <Text p={0} m={0}>
-          {revelation} | {numberOfVerses} ayat
-        </Text>
-      </Stack>
-      <Text align="end" fontSize="2xl" color="green.600">
+        <Stack align="flex-start" spacing={2}>
+          <Text fontWeight={700} p={0} m={0}>
+            {surahName}
+          </Text>
+          <Text p={0} m={0}>
+            {revelation} • {numberOfVerses} ayat
+          </Text>
+        </Stack>
+      </HStack>
+      <Text align="end" fontSize="4xl">
         {surahArabName}
       </Text>
     </HStack>

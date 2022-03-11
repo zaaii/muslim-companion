@@ -13,7 +13,7 @@ export default function SurahList() {
     quranAPI.getSurahList().then((response) => {
       setListSurah(response.data.data);
     });
-  }, []);
+  }, [setListSurah]);
 
   return (
     <Stack spacing={0}>

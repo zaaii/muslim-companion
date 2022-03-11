@@ -11,7 +11,6 @@ export default function VerseBookmarkButton({ verseNumber }: Props) {
       icon={<IoBookmarkOutline />}
       aria-label="bookmark"
       variant="ghost"
-      color="green.700"
     />
   );
 }

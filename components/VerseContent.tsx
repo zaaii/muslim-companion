@@ -9,13 +9,13 @@ interface Props {
 export default function VerseContent({ arabText, englishText, translationInID }: Props) {
   return (
     <Stack px={4}>
-      <Text textAlign="right" fontSize={[24, 32]} color="green.800">
+      <Text textAlign="right" fontSize={['3xl', '4xl']} lineHeight="2">
         {arabText}
       </Text>
-      <Text color="green.600">
+      <Text fontWeight="medium">
         {englishText}
       </Text>
-      <Text as="i">
+      <Text as="i" fontWeight="light">
       {translationInID}
       </Text>
     </Stack>

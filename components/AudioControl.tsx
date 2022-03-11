@@ -18,7 +18,7 @@ export default function AudioControl({ audioSrc }: Props) {
         setAudioPlayed(false);
       });
     };
-  }, []);
+  }, [audioSrc]);
 
   const handlePlayClick = () => {
     audioSrc.play();
@@ -38,7 +38,6 @@ export default function AudioControl({ audioSrc }: Props) {
         onClick={handlePauseClick}
         aria-label="pause"
         variant="ghost"
-        color="green.700"
       />
     )
   }
@@ -50,7 +49,6 @@ export default function AudioControl({ audioSrc }: Props) {
       aria-label="play"
       rounded="full"
       variant="ghost"
-      color="green.700"
     />
   );
 }

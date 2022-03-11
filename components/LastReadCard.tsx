@@ -26,18 +26,18 @@ export default function LastReadCard() {
       <Stack
         p={4}
         rounded="md"
-        bgColor="green.100"
+        bgColor="gray.100"
         cursor="pointer"
         onClick={handleCardClick}
-        shadow="md"
         align="center"
+        backdropFilter="saturate(180%) blur(20px)"
       >
         <HStack align="center">
           <Icon as={IoBook} />
-          <Text color="green.800">Terakhir Dibaca</Text>
+          <Text>Terakhir Dibaca</Text>
         </HStack>
-        <Heading color="green.800" fontSize="4xl">{short}</Heading>
-        <Text color="green.800">{transliterationID}</Text>
+        <Heading fontSize="4xl">{short}</Heading>
+        <Text>{transliterationID}</Text>
       </Stack>
     );
   }
