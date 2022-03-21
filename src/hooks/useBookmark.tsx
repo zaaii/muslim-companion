@@ -1,16 +1,14 @@
-import { useToast } from '@chakra-ui/react';
 import { useAtom } from 'jotai';
 import { savedSurahAtom } from '../atom/store';
 import { Surah } from '../interfaces/Surah';
 
 type ReturnType = {
-  getSurahIndex: () => void,
-  toggle: () => void,
+  getSurahIndex: (number: number) => number,
+  toggle: (surah: Surah) => void,
 }
 
-export default function useBookmark() {
+export default function useBookmark(): ReturnType {
   const [savedSurah, storeSurah] = useAtom(savedSurahAtom);
-  const toast = useToast();
 
   const getSurahIndex = (number: number) => {
     return savedSurah.findIndex(saved => saved.number === number);

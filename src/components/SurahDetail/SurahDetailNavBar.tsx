@@ -7,7 +7,7 @@ interface Props {
   isSaved: boolean;
 }
 
-export default function BackNavigationBar({
+export default function SurahDetailNavBar({
   onBackClick,
   onBookmarkClick,
   isSaved,

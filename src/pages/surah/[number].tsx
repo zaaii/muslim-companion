@@ -2,7 +2,7 @@ import { useToast } from '@chakra-ui/react';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 
-import BackNavigationBar from '../../components/BackNavigationBar';
+import SurahDetailNavBar from '../../components/SurahDetail/SurahDetailNavBar';
 import SurahDetail from '../../components/SurahDetail';
 import useBookmark from '../../hooks/useBookmark';
 import useMyQuranAPI from '../../hooks/useMyQuranAPI';
@@ -10,12 +10,16 @@ import { SurahDetails } from '../../interfaces/Surah';
 
 export default function SurahDetailsPage() {
   const router = useRouter();
-  const toast = useToast();
   const { getSurahIndex, toggle } = useBookmark();
   const { number } = router.query;
   const { response, isLoading } = useMyQuranAPI<SurahDetails>(
     `surah/${number}`
   );
+  const toast = useToast({
+    variant: 'subtle',
+    status: 'info',
+    position: 'bottom',
+  });
 
   const surahName = response?.data?.name.transliteration.id;
   const isSaved = getSurahIndex(response?.data.number) >= 0;
@@ -24,15 +28,13 @@ export default function SurahDetailsPage() {
     toggle(response?.data);
     if (!isSaved) {
       toast({
-        variant: 'subtle',
+        
         status: 'success',
         title: `Surat ${surahName} disimpan`,
         description: `surat yang disimpan dapat dilihat dalam halaman bookmark`
       })
     } else {
       toast({
-        variant: 'subtle',
-        status: 'info',
         title: `Surat ${surahName} dihapus dari bookmark`,
       })
     }
@@ -52,7 +54,7 @@ export default function SurahDetailsPage() {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <BackNavigationBar
+      <SurahDetailNavBar
         onBackClick={handleBackClick}
         onBookmarkClick={handleBookmarkClick}
         isSaved={isSaved}
