@@ -30,6 +30,7 @@ export default function SurahCard({
       py={2}
       cursor="pointer"
       onClick={handleSurahClick}
+      w="100%"
     >
       <HStack flex={1}>
         <Text
