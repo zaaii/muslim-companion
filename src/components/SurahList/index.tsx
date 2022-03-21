@@ -4,7 +4,7 @@ import { Surah } from '../../interfaces/Surah';
 import SurahCard from './SurahCard';
 
 interface Props {
-  list: Surah[];
+  list: Partial<Surah>[];
   isLoading: boolean;
 }
 

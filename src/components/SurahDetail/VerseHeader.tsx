@@ -1,5 +1,5 @@
 import { HStack, Text } from '@chakra-ui/react';
-import AudioControl from '../AudioControl';
+import AudioControl from './AudioControl';
 
 interface Props {
   number: number;

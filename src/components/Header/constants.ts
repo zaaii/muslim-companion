@@ -2,11 +2,19 @@ import { NavItem } from './types';
 
 export const NAV_ITEMS_PUBLIC: Array<NavItem> = [
   {
-    label: 'Repository',
+    label: 'Beranda 🏠',
+    href: '/',
+  },
+  {
+    label: 'Bookmarks 🔖',
+    href: '/bookmark',
+  },
+  {
+    label: 'Repository 📦',
     href: 'https://github.com/hare451g/muslim-companion',
   },
   {
-    label: 'Qur\'an API',
+    label: 'Qur\'an API ⚡️',
     href: 'https://github.com/sutanlab/quran-api',
   },
   {
