@@ -1,14 +1,17 @@
 import { Skeleton, Stack } from '@chakra-ui/react';
 
-import useMyQuranAPI from '../../hooks/useMyQuranAPI';
 import { Surah } from '../../interfaces/Surah';
 import SurahCard from './SurahCard';
 
-export default function SurahList() {
-  const { isLoading, response } = useMyQuranAPI<Surah[]>('surah');
+interface Props {
+  list: Surah[];
+  isLoading: boolean;
+}
 
-  if (!isLoading && response && response.data) {
-    const surahList = response.data.map((surah) => ({
+export default function SurahList({ list, isLoading }:Props) {
+
+  if (!isLoading && list) {
+    const surahList = list.map((surah) => ({
       number: surah.number,
       numberOfVerses: surah.numberOfVerses,
       revelationId: surah.revelation.id,
