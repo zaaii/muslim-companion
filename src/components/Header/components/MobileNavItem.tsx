@@ -8,6 +8,8 @@ import {
   useColorModeValue,
   useDisclosure,
 } from '@chakra-ui/react';
+import NextLink from 'next/link';
+
 import { IoChevronDownOutline } from 'react-icons/io5';
 import { NavItem } from '../types';
 
@@ -54,7 +56,7 @@ function MobileNavItem({ label, children, href }: NavItem) {
         >
           {children &&
             children.map((child) => (
-              <Link key={child.label} py={2} href={child.href}>
+              <Link as={NextLink} key={child.label} py={2} href={child.href}>
                 {child.label}
               </Link>
             ))}

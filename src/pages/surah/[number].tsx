@@ -7,9 +7,13 @@ import SurahDetail from '../../components/SurahDetail';
 import useBookmark from '../../hooks/useBookmark';
 import useMyQuranAPI from '../../hooks/useMyQuranAPI';
 import { SurahDetails } from '../../interfaces/Surah';
+import { useAtom } from 'jotai';
+import { lastReadAtom } from '../../atom/store';
+import { useEffect } from 'react';
 
 export default function SurahDetailsPage() {
   const router = useRouter();
+  const [, saveLastRead] = useAtom(lastReadAtom);
   const { getSurahIndex, toggle } = useBookmark();
   const { number } = router.query;
   const { response, isLoading } = useMyQuranAPI<SurahDetails>(
@@ -43,6 +47,12 @@ export default function SurahDetailsPage() {
   const handleBackClick = () => {
     router.back();
   };
+
+  useEffect(() => {
+    if (response?.data) {
+      saveLastRead(response?.data)
+    }
+  }, [response]);
 
   return (
     <>

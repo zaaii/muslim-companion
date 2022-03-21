@@ -32,7 +32,13 @@ export default function SurahCard({
       onClick={handleSurahClick}
     >
       <HStack flex={1}>
-        <Text mr="4" fontSize="lg" fontWeight="bold">
+        <Text
+          mr="4"
+          fontSize="lg"
+          fontWeight="bold"
+          minW="24px"
+          textAlign="center"
+        >
           {number}
         </Text>
         <Stack align="flex-start" spacing={2}>
