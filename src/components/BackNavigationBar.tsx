@@ -1,14 +1,17 @@
 import { HStack, IconButton, Text } from '@chakra-ui/react';
-import { useRouter } from 'next/router';
-import { IoArrowBack } from 'react-icons/io5';
+import { IoArrowBack, IoBookmark, IoBookmarkOutline } from 'react-icons/io5';
 
-export default function BackNavigationBar() {
-  const { back } = useRouter();
+interface Props {
+  onBookmarkClick: () => void;
+  onBackClick: () => void;
+  isSaved: boolean;
+}
 
-  const handleBackClick = () => {
-    back();
-  };
-
+export default function BackNavigationBar({
+  onBackClick,
+  onBookmarkClick,
+  isSaved,
+}: Props) {
   return (
     <HStack
       align="center"
@@ -21,13 +24,20 @@ export default function BackNavigationBar() {
       <HStack>
         <IconButton
           icon={<IoArrowBack />}
-          onClick={handleBackClick}
+          onClick={onBackClick}
           aria-label="back"
           rounded="full"
           variant="ghost"
         />
         <Text>Beranda</Text>
       </HStack>
+      <IconButton
+        icon={isSaved ? <IoBookmark /> : <IoBookmarkOutline />}
+        onClick={onBookmarkClick}
+        aria-label="bookmark"
+        rounded="full"
+        variant="ghost"
+      />
     </HStack>
   );
 }
