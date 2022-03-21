@@ -1,7 +1,6 @@
-import { Heading, HStack, Icon, Stack, Text } from '@chakra-ui/react';
+import { Heading, HStack, Stack, Text } from '@chakra-ui/react';
 import { useAtom } from 'jotai';
 import { useRouter } from 'next/router';
-import { IoBook } from 'react-icons/io5';
 
 import { lastReadAtom } from '../atom/store';
 
@@ -33,7 +32,6 @@ export default function LastReadCard() {
         backdropFilter="saturate(180%) blur(20px)"
       >
         <HStack align="center">
-          <Icon as={IoBook} />
           <Text>Terakhir Dibaca</Text>
         </HStack>
         <Heading fontSize="4xl">{short}</Heading>

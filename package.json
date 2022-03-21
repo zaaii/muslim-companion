@@ -12,14 +12,15 @@
     "@chakra-ui/react": "^1.8.6",
     "@emotion/react": "^11",
     "@emotion/styled": "^11",
-    "axios": "^0.26.0",
     "date-fns": "^2.28.0",
     "framer-motion": "^6",
+    "immer": "^9.0.12",
     "jotai": "^1.6.0",
     "next": "12.1.0",
     "react": "17.0.2",
     "react-dom": "17.0.2",
-    "react-icons": "^4.3.1"
+    "react-icons": "^4.3.1",
+    "use-immer": "^0.6.0"
   },
   "devDependencies": {
     "@types/node": "^17.0.21",
