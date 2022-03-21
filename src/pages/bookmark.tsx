@@ -18,7 +18,7 @@ export default function BookmarkPage() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
-      <Stack p={4} minH="calc(100vh - 144px)">
+      <Stack p={4} minH="calc(100vh - 144px)" w="100%">
         {surah && surah.length > 0 ? (
           <SurahList isLoading={false} list={surah} />
         ) : (
@@ -27,7 +27,7 @@ export default function BookmarkPage() {
             <Divider />
             <HStack>
               <Text>
-                Tekan tombol Bookmark <Icon as={IoBookmarkOutline} size="xl" />{' '}
+                Tekan tombol Bookmark <Icon as={IoBookmarkOutline} size="24px" />{' '}
                 untuk menyimpan surat.
               </Text>
             </HStack>

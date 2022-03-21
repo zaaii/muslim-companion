@@ -20,7 +20,7 @@ export default function SurahList({ list, isLoading }:Props) {
     }));
 
     return (
-      <Stack spacing={0}>
+      <Stack spacing={0} flex={1} w="100%">
         {surahList.map(
           ({
             number,
