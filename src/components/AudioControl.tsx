@@ -3,30 +3,43 @@ import { useEffect, useState } from 'react';
 import { IoPause, IoPlay } from 'react-icons/io5'
 
 interface Props {
-  audioSrc: HTMLAudioElement;
+  audioSrc: string;
 }
 
 export default function AudioControl({ audioSrc }: Props) {
   const [isAudioPlayed, setAudioPlayed] = useState<boolean>(false);
+  const [audio, setAudio] = useState<HTMLAudioElement>();
 
   useEffect(() => {
-    audioSrc.addEventListener('ended', () => {
+    if (!audio) {
+      return;
+    }
+
+    audio.addEventListener('ended', () => {
       setAudioPlayed(false);
     });
+    
+    if (isAudioPlayed) {
+      audio.play();
+    } else {
+      audio.pause();
+    }
+
     return () => {
-      audioSrc.removeEventListener('ended', () => {
+      audio.removeEventListener('ended', () => {
         setAudioPlayed(false);
       });
     };
-  }, [audioSrc]);
+  }, [audio, isAudioPlayed, audioSrc]);
 
   const handlePlayClick = () => {
-    audioSrc.play();
+    if (!audio) {
+      setAudio(new Audio(audioSrc));
+    }
     setAudioPlayed(true);
   };
 
   const handlePauseClick = () => {
-    audioSrc.pause();
     setAudioPlayed(false);
   };
 
