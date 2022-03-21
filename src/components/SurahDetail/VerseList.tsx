@@ -1,5 +1,5 @@
 import { Stack } from '@chakra-ui/react';
-import { Verse } from '../interfaces/Verse';
+import { Verse } from '../../interfaces/Verse';
 import VerseContent from './VerseContent';
 import VerseHeader from './VerseHeader';
 
